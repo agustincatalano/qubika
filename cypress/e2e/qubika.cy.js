@@ -22,7 +22,7 @@ describe('interview exercises', () => {
     });
   });
 
-  it.only(`validate Sports Club with user: ${EMAIL}`, () => {
+  it(`validate Sports Club with user: ${EMAIL}`, () => {
     cy.intercept('**/category-type/create').as('CATEGORY_CREATED');
     //2) Go to Qubika Sports Club Management System
     cy.visit('/#/auth/login');
@@ -31,7 +31,7 @@ describe('interview exercises', () => {
     cy.get('.card-body').should('be.visible');
     cy.contains('Por favor ingrese correo y contraseña').should('be.visible');
     //4) Log in with the created user
-    cy.get('[formcontrolname="email"]').type('agustin.catalano@qubika.com');
+    cy.get('[formcontrolname="email"]').type(EMAIL);
     cy.get('[formcontrolname="password"]').type('test123');
     cy.get('[type="submit"]').should('be.visible').click();
     //5) Validate that the user is logged in
