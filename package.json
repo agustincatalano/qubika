@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "cypress": "^13.13.0",
+    "globals": "^15.8.0",
+    "prettier": "3.3.3"
+  },
+  "scripts": {
+    "cy-open": "npx cypress open",
+    "cy-run": " npx cypress run --spec cypress/e2e/qubika.cy.js"
+  }
+}
